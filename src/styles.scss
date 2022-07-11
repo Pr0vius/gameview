@@ -1,0 +1,26 @@
+:root {
+  --background: #312E38;
+  --background-dark: #211D28;
+  --text: #BCBCBC;
+  --text-light: #FFFFFF;
+  --primary-light: #E9C463;
+  --primary-regular: #D49E11;
+  --primary-dark: #98751B;
+  --info-light: #63D9E9;
+  --info-regular: #11BDD5;
+  --info-dark: #1B8898;
+  --link-light: #63CCE9;
+  --link-regular: #1182D4;
+  --link-dark: #1B6398;
+  --success-light: #63E988;
+  --success-regular: #11D448;
+  --success-dark: #1B983E;
+  --warning-light: #E99B63;
+  --warning-regular: #D46311;
+  --warning-dark: #984F1B;
+  --danger-light: #E96363;
+  --danger-regular: #D41111;
+  --danger-dark: #981B1B;
+
+}
+@import "./assets/scss/reset.scss";
