@@ -1,0 +1,10 @@
+<a [routerLink]="game.slug">
+  <div
+    class="game_card"
+    [ngStyle]="{
+      'background-image': ['url(', game.background_image, ')'].join('')
+    }"
+  >
+    <div class="info">{{ game.name }}</div>
+  </div>
+</a>
