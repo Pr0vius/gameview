@@ -1,0 +1,12 @@
+.search_container {
+  background-color: var(--background);
+  padding: 0.5rem;
+  > form {
+    display: flex;
+    > input {
+      padding: .5rem;
+    }
+    > button {
+    }
+  }
+}
