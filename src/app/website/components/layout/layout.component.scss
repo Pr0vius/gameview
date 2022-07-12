@@ -1,6 +1,11 @@
 .layout {
   display: flex;
-  main.main {
+  .content {
     width: 100%;
+    box-sizing: border-box;
+    > main.main {
+      padding: 0 1rem;
+      box-sizing: border-box;
+    }
   }
 }
