@@ -1,0 +1,19 @@
+h2{
+  margin: 1rem 0 .5rem 1rem;
+}
+.page_grid {
+  padding: 0 1rem;
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  gap: 2rem;
+  > .left_column {
+    > img{
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+  >.right_column {
+    outline: 1px solid red;
+
+  }
+}
