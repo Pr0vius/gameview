@@ -1,0 +1,15 @@
+<div class="rating">
+  <h4>Ratings ({{ count }})</h4>
+  <div class="bar">
+    <div
+      *ngFor="let rating of ratings"
+      [class]="['rating_point', rating.title]"
+      [style.width]="rating.percent + '%'"
+    ></div>
+  </div>
+  <div class="info">
+    <p *ngFor="let rating of ratings" [class]="rating.title">
+      {{ rating.title }}({{ rating.count }})
+    </p>
+  </div>
+</div>

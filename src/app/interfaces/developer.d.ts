@@ -5,3 +5,7 @@ export interface Developer {
   games_count: number;
   image_background: string;
 }
+
+export interface DeveloperDetails extends Developer {
+  description: string;
+}

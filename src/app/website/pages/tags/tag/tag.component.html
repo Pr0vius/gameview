@@ -1,0 +1,17 @@
+<h1>{{ tag.name }}</h1>
+<div class="content">
+  <div class="image">
+    <app-image
+      [src]="tag.image_background"
+      [alt]="tag.name"
+      [adjust]="true"
+      [aspectRatio]="[1, 1]"
+    ></app-image>
+  </div>
+  <p [outerHTML]="tag.description || 'No description...'"></p>
+</div>
+<div class="games">
+  <h3>Games</h3>
+  <app-game-grid [games]="games"></app-game-grid>
+  <app-load-button (click)="onClick()" [loading]="loading"></app-load-button>
+</div>

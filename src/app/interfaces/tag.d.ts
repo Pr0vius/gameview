@@ -6,3 +6,6 @@ export interface Tag {
   games_count: number;
   image_background: string;
 }
+export interface TagDetails extends Tag {
+  description: string;
+}

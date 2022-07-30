@@ -5,3 +5,7 @@ export interface Genre {
   games_count: number;
   image_background: string;
 }
+
+export interface GenreDetails extends Genre {
+  description: string;
+}

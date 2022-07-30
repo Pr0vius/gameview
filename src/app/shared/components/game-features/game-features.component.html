@@ -1,0 +1,22 @@
+<div class="features">
+  <div class="box">
+    <h6 class="box_title">Genres</h6>
+    <ul>
+      <li *ngFor="let genre of genres.slice(0, 9); let isLast = last">
+        <a [routerLink]="['/store', 'genre', genre.slug]">
+          {{ genre.name }}{{ isLast ? "" : "," }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  <div class="box">
+    <h6 class="box_title">Tags</h6>
+    <ul>
+      <li *ngFor="let tag of tags.slice(0, 9); let isLast = last">
+        <a [routerLink]="['/store', 'tags', tag.slug]">
+          {{ tag.name }}{{ isLast ? "" : "," }}
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>

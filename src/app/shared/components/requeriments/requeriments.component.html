@@ -1,0 +1,9 @@
+<div *ngIf="req.length > 0">
+  <h4>Requeriments for {{ name }}</h4>
+  <div>
+    <ul *ngFor="let r of req">
+      <h5>{{ r[0] }}</h5>
+      <li *ngFor="let specs of r.slice(1, -1)">{{ specs }}</li>
+    </ul>
+  </div>
+</div>

@@ -1,0 +1,93 @@
+div {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 9980;
+  box-sizing: border-box;
+  > .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: #000000aa;
+    box-sizing: border-box;
+  }
+  > .modal {
+    position: absolute;
+    box-sizing: border-box;
+    height: 80vh;
+    max-width: 60vw;
+    background-color: var(--background);
+    top: 10vh;
+    left: calc(50%);
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    > header {
+      padding: 1em;
+      padding-bottom: 0;
+      text-align: start;
+      display: flex;
+      justify-content: space-between;
+      h4 {
+        margin: 0;
+      }
+      button {
+        width: 1em;
+        height: 1em;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        position: relative;
+        &::before,
+        &::after {
+          position: absolute;
+          width: 1.7em;
+          height: 0.2em;
+          display: block;
+          background-color: #fff;
+          content: "";
+          right: 0;
+          top: calc(50% - 0.2em);
+        }
+        &::before {
+          transform: rotate(135deg);
+        }
+        &::after {
+          transform: rotate(-135deg);
+        }
+      }
+    }
+    > hr {
+      width: calc(100% - 2em);
+    }
+    > .grid {
+      padding: 1em;
+      position: static;
+      width: 100%;
+      overflow-x: hidden;
+      overflow-y: auto;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1em;
+      &::-webkit-scrollbar {
+        width: 0.8rem;
+        height: 0.8rem;
+      }
+      &::-webkit-scrollbar-track {
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.1);
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background: rgba(0, 0, 0, 0.2);
+      }
+      &::-webkit-scrollbar-thumb:hover {
+        background: rgba(0, 0, 0, 0.4);
+      }
+      &::-webkit-scrollbar-thumb:active {
+        background: rgba(0, 0, 0, 0.9);
+      }
+    }
+  }
+}

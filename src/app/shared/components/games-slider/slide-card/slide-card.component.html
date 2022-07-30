@@ -1,0 +1,38 @@
+<a [routerLink]="['/games', game.slug]" class="game_slide">
+  <div class="img_container">
+    <app-image
+      [src]="game.background_image"
+      [alt]="game.name"
+      [adjust]="true"
+      [aspectRatio]="[8, 5]"
+    >
+    </app-image>
+  </div>
+  <div class="game_details">
+    <h3>{{ game.name }}</h3>
+    <div class="rating">
+      <app-rating-stars [rating]="game.rating"></app-rating-stars>
+      <span>
+        {{ game.esrb_rating?.name }}
+      </span>
+    </div>
+    <div class="icons">
+      <app-platform-icon
+        *ngFor="let platform of game.parent_platforms"
+        [platform]="platform.platform.slug"
+      ></app-platform-icon>
+    </div>
+    <div class="genres">
+      <a
+        *ngFor="let genre of game.genres"
+        [routerLink]="['/genres', genre.slug]"
+        >{{ genre.name }}</a
+      >
+    </div>
+    <div class="genres">
+      <a *ngFor="let tag of game.tags" [routerLink]="['/tags', tag.slug]">{{
+        tag.name
+      }}</a>
+    </div>
+  </div>
+</a>

@@ -1,6 +1,6 @@
-<a [routerLink]="game.slug">
+<a [routerLink]="['/games', game.slug]">
   <div class="game_card">
-    <img [src]="game.background_image" alt="" />
+    <app-image [adjust]="true" [aspectRatio]="[3,4]" [src]="game.background_image" [alt]="game.name" > </app-image>
     <div class="info">
       <h4>{{ game.name }}</h4>
     </div>

@@ -1,0 +1,13 @@
+<button
+  class="button"
+  (click)="onClick()"
+  type="button"
+  [disabled]="loading"
+>
+  <ng-container *ngIf="!loading; else showSpinner">
+    {{ text }}
+  </ng-container>
+  <ng-template #showSpinner>
+    <div class="lds-dual-ring"></div>
+  </ng-template>
+</button>

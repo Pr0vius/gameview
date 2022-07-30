@@ -1,58 +1,50 @@
-<div class="sidebar desktop">
+<div class="sidebar" [class.active]="active">
   <a routerLink="">
-    <div class="user">
-      <span class="material-symbols-outlined">account_circle</span>
-      username
+    <div class="brand">
+      <app-sidebar-icons [icon]="'default'"></app-sidebar-icons>
+      GameView
     </div>
   </a>
   <hr />
   <nav class="nav">
     <ul>
       <li>
-        <a routerLink="">
-          <span class="material-symbols-outlined"> sell </span>
-          Store
+        <a [routerLink]="'/games'">
+          <app-sidebar-icons [icon]="'games'"></app-sidebar-icons>
+          Games
         </a>
       </li>
       <li>
-        <a routerLink="">
-          <span class="material-symbols-outlined"> grid_view </span>
-          Libary
+        <a routerLink="/platforms">
+          <app-sidebar-icons [icon]="'platform'"></app-sidebar-icons>
+          Platforms
         </a>
       </li>
       <li>
-        <a routerLink="">
-          <span class="material-symbols-outlined"> history </span>
-          Recent
+        <a routerLink="/genres">
+          <app-sidebar-icons [icon]="'genre'"></app-sidebar-icons>
+          Genres
         </a>
       </li>
       <li>
-        <a routerLink="">
-          <span class="material-symbols-outlined"> favorite </span>
-          Favorites
+        <a routerLink="/tags">
+          <app-sidebar-icons [icon]="'tag'"></app-sidebar-icons>
+          Tags
+        </a>
+      </li>
+      <li>
+        <a routerLink="/developers">
+          <app-sidebar-icons [icon]="'dev'"></app-sidebar-icons>
+          Developers
+        </a>
+      </li>
+      <li>
+        <a routerLink="/publishers">
+          <app-sidebar-icons [icon]="'publisher'"></app-sidebar-icons>
+          Publishers
         </a>
       </li>
     </ul>
   </nav>
-  <hr class="options" />
-  <div class="options">
-    <ul>
-      <li>
-        <a routerLink="">
-          <span class="material-symbols-outlined"> download_for_offline </span
-          >Download
-        </a>
-      </li>
-      <li>
-        <a routerLink="">
-          <span class="material-symbols-outlined"> settings </span>Settings
-        </a>
-      </li>
-      <li>
-        <a routerLink="">
-          <span class="material-symbols-outlined"> help </span>About us
-        </a>
-      </li>
-    </ul>
-  </div>
 </div>
+<app-button-menu (clickEvt)="handleClick()" [active]="active"></app-button-menu>

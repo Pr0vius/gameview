@@ -1,0 +1,10 @@
+<div #container class="image_container" [class.adjust]="adjust">
+  <img
+    [src]="src"
+    [alt]="alt"
+    (error)="onError()"
+    (load)="onLoad()"
+    [style.display]="loading ? 'none' : 'inline-block'"
+  />
+  <div class="loading" *ngIf="loading"></div>
+</div>

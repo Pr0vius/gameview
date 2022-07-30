@@ -1,11 +1,5 @@
-import {
-  AfterViewInit,
-  Component,
-  ElementRef,
-  Input,
-  ViewChild,
-} from '@angular/core';
-import { Game } from 'src/app/interfaces/game';
+import { Component, Input } from '@angular/core';
+import { DLC, Game } from 'src/app/interfaces/game';
 
 @Component({
   selector: 'app-game-card',
@@ -13,7 +7,7 @@ import { Game } from 'src/app/interfaces/game';
   styleUrls: ['./game-card.component.scss'],
 })
 export class GameCardComponent {
-  @Input() game!: Game;
+  @Input() game!: Game | DLC;
 
   constructor() {}
 }

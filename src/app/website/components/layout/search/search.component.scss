@@ -1,12 +1,23 @@
 .search_container {
   background-color: var(--background);
-  padding: 0.5rem;
+  padding: 0.5em 1em;
   > form {
     display: flex;
     > input {
-      padding: .5rem;
+      padding: .5em;
+      background-color: var(--background-dark);
+      outline: none;
+      border: none;
+      color: var(--text-light);
+      width: 100%;
     }
     > button {
+      background-color: var(--link-regular);
+      color: var(--text-light);
+      border: none;
     }
+  }
+  @media (max-width: 576px) {
+    padding-left: 4em;
   }
 }

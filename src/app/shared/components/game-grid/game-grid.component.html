@@ -1,3 +1,12 @@
 <div class="game_grid">
-  <app-game-card *ngFor="let game of games" [game]="game"></app-game-card>
+  <ng-container *ngIf="smallCards; else notSmall">
+    <app-small-card
+      *ngFor="let game of games"
+      [rating]="rating"
+      [game]="game"
+    ></app-small-card>
+  </ng-container>
+  <ng-template #notSmall>
+    <app-game-card *ngFor="let game of games" [game]="game"></app-game-card>
+  </ng-template>
 </div>

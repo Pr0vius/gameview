@@ -1,0 +1,51 @@
+.game_slide {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 55% 1fr;
+  padding: 0.5em;
+  gap: 1em;
+  box-sizing: border-box;
+  text-decoration: none;
+  @media (max-width: 992px) {
+    display: flex;
+    flex-direction: column;
+  }
+  .game_details {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+    h3 {
+      font-size: 1.5em;
+      margin: 0;
+    }
+    .rating {
+      display: flex;
+      align-items: center;
+      gap: 1ch;
+    }
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 1em;
+      > app-platform-icon {
+        font-size: 1.4em;
+      }
+    }
+    .genres {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1ch;
+      font-size: 0.8em;
+      @media (max-width: 992px) {
+        display: none;
+      }
+      a {
+        text-decoration: none;
+        color: var(--link-light);
+        background-color: var(--link-dark);
+        padding: 0.2em;
+        border-radius: 0.3em;
+      }
+    }
+  }
+}

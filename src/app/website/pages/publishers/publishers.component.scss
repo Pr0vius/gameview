@@ -1,0 +1,9 @@
+.grid {
+  display: grid;
+  gap: 1.5em;
+  grid-template-columns: 1fr;
+  padding: .5em;
+  @media (min-width: 993px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

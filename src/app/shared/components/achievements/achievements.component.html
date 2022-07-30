@@ -1,0 +1,16 @@
+<div>
+  <app-achievement
+    *ngFor="let achievement of achievements.slice(0, 6); let isLast = last"
+    [achievement]="achievement"
+    [total]="achievements.length"
+    [last]="isLast"
+    (clickAchievement)="openModal()"
+    [small]="true"
+  ></app-achievement>
+  <ng-container *ngIf="expanded">
+    <app-achievement-modal
+      [achievements]="achievements"
+      (close)="closeModal()"
+    ></app-achievement-modal>
+  </ng-container>
+</div>

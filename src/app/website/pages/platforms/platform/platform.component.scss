@@ -1,0 +1,20 @@
+.page_grid {
+  display: grid;
+  grid-template-columns: 1fr 30%;
+  .l_bar {
+    margin: 0;
+    background-color: #112;
+    padding: 2em;
+    > app-store-button {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      align-items: center;
+    }
+  }
+  .r_bar {
+    margin: 0;
+
+    background-color: #200;
+  }
+}

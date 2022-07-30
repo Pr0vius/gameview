@@ -1,0 +1,27 @@
+.features {
+  display: flex;
+  margin: 2rem 0;
+  > .box {
+    border-left: 1px solid gray;
+    padding: 0.5rem;
+    padding-left: 1rem;
+    width: 100%;
+    > .box_title {
+      margin: 0 0 0.3rem 0;
+    }
+    > ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      > li {
+        margin-right: 1ch;
+        > a {
+          color: var(--text-light);
+          font-size: 0.8rem;
+        }
+      }
+    }
+  }
+}

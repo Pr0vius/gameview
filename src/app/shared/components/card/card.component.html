@@ -1,0 +1,12 @@
+<a [routerLink]="routerLink" class="card">
+  <app-image
+    [adjust]="true"
+    [aspectRatio]="[16, 9]"
+    [src]="item.image_background"
+    [alt]="item.name"
+  ></app-image>
+  <div class="overlay">
+    <app-platform-icon *ngIf="renderIcon" [platform]="item.slug"></app-platform-icon>
+    <h4>{{ item.name }}</h4>
+  </div>
+</a>

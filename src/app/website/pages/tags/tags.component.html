@@ -1,0 +1,13 @@
+<h1>Tags</h1>
+<div class="grid">
+  <app-card
+    *ngFor="let tag of tags"
+    [item]="tag"
+    [routerLink]="tag.slug"
+  ></app-card>
+</div>
+<app-load-button
+  (click)="loadMore()"
+  [loading]="loading"
+  text="Load more"
+></app-load-button>

@@ -1,0 +1,12 @@
+<h1>Publisher</h1>
+<div class="grid">
+  <app-card *ngFor="let publisher of publishers" [item]="publisher" [routerLink]="[publisher.slug]"></app-card>
+</div>
+<a
+  *ngIf="querys.page! > 1"
+  [routerLink]="[]"
+  [queryParams]="{ page: querys.page! - 1 }"
+  >&lt;Previous</a
+>
+{{ " " }}
+<a [routerLink]="[]" [queryParams]="{ page: querys.page! + 1 }">Next&gt;</a>

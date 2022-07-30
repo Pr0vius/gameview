@@ -1,0 +1,28 @@
+<div class="container">
+  <swiper
+    #swiper
+    style="--swiper-navigation-color: #fff; --swiper-pagination-color: #fff"
+    [config]="config"
+    [thumbs]="{ swiper: thumbsSwiper }"
+    class="slider"
+  >
+    <ng-template swiperSlide *ngFor="let image of images"
+      ><div class="image_container">
+        <app-image [adjust]="true" [src]="image" alt="game screenshot">
+        </app-image>
+      </div>
+    </ng-template>
+  </swiper>
+  <swiper (swiper)="onSwiper($event)" [config]="thumbsConfig" class="thumbs">
+    <ng-template swiperSlide *ngFor="let image of images">
+      <div class="image_container">
+        <app-image
+          [adjust]="true"
+          [src]="image"
+          alt="game screenshot thumbnail"
+        >
+        </app-image>
+      </div>
+    </ng-template>
+  </swiper>
+</div>

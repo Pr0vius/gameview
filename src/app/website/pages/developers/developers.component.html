@@ -1,0 +1,12 @@
+<h1>Developers</h1>
+<div class="grid">
+  <app-card *ngFor="let dev of devs" [item]="dev" [routerLink]="[dev.slug]"></app-card>
+</div>
+<a
+  *ngIf="querys.page! > 1"
+  [routerLink]="[]"
+  [queryParams]="{ page: querys.page! - 1 }"
+  >&lt;Previous</a
+>
+{{ " " }}
+<a [routerLink]="[]" [queryParams]="{ page: querys.page! + 1 }">Next&gt;</a>

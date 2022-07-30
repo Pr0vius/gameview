@@ -1,0 +1,8 @@
+<h1>Genres</h1>
+<div class="grid">
+  <app-card
+    *ngFor="let genre of genres"
+    [item]="genre"
+    [routerLink]="genre.slug"
+  ></app-card>
+</div>

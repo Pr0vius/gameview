@@ -1,0 +1,7 @@
+<div class="slider_container">
+  <swiper [config]="config" class="game_swiper">
+    <ng-template swiperSlide *ngFor="let game of games">
+      <app-slide-card [game]="game"></app-slide-card>
+    </ng-template>
+  </swiper>
+</div>

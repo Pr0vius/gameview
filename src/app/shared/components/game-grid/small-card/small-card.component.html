@@ -1,0 +1,21 @@
+<a class="game_card" [routerLink]="['/games', game.slug]">
+  <div class="image">
+    <app-image
+      [adjust]="true"
+      [aspectRatio]="[3, 4]"
+      [src]="game.background_image"
+      [alt]="game.name"
+    >
+    </app-image>
+  </div>
+  <div class="body">
+    <div class="card_heading">
+      <h4>{{ game.name }}</h4>
+      <app-rating-stars
+        *ngIf="rating"
+        [rating]="game.rating"
+      ></app-rating-stars>
+    </div>
+    <span>See more</span>
+  </div>
+</a>

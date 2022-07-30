@@ -1,0 +1,18 @@
+<ng-container *ngIf="small; else large">
+  <div class="small" [title]="achievement.name">
+    <button (click)="onClick()">
+      <app-image [src]="achievement.image" [alt]="achievement.name"></app-image>
+      <div class="more" *ngIf="last && total > 6">+{{ total - 6 }}</div>
+    </button>
+  </div>
+</ng-container>
+<ng-template #large>
+  <div class="large">
+      <app-image [adjust]="true" [aspectRatio]="[1,1]" [src]="achievement.image" [alt]="achievement.name"></app-image>
+    <div class="info">
+      <span>{{ achievement.percent }}%</span>
+      <h5>{{ achievement.name }}</h5>
+      <p>{{ achievement.description }}</p>
+    </div>
+  </div>
+</ng-template>

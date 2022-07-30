@@ -1,0 +1,17 @@
+<div>
+  <div class="overlay" (click)="closeModal()"></div>
+  <div class="modal">
+    <header>
+      <h4>Achievements</h4>
+      <button (click)="closeModal()"></button>
+    </header>
+    <hr />
+    <div class="grid">
+      <app-achievement
+        *ngFor="let achievement of achievements"
+        [achievement]="achievement"
+        [small]="false"
+      ></app-achievement>
+    </div>
+  </div>
+</div>

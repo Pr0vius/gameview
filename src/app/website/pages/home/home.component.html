@@ -1,1 +1,27 @@
-<app-game-grid></app-game-grid>
+<h2>Popular Games</h2>
+<app-games-slider [games]="sliderGames"></app-games-slider>
+<h3>Best rated games</h3>
+<app-game-grid [games]="ratingGames"></app-game-grid>
+<h3>Genres</h3>
+<div class="grid">
+  <app-card
+    *ngFor="let genre of genres"
+    [item]="genre"
+    [routerLink]="['/genres', genre.slug]"
+  ></app-card>
+</div>
+<h3>Newest games</h3>
+<app-game-grid
+  [games]="newestGames"
+  [rating]="false"
+  [smallCards]="true"
+></app-game-grid>
+<h3>Platforms</h3>
+<div class="grid">
+  <app-card
+    *ngFor="let platform of platforms"
+    [renderIcon]="true"
+    [item]="platform"
+    [routerLink]="['/platforms', platform.slug]"
+  ></app-card>
+</div>

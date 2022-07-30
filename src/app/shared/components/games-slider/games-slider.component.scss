@@ -1,0 +1,29 @@
+.slider_container {
+  box-sizing: border-box;
+  width: calc(100vw - 15.5em - 3.1em);
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+  .game_swiper {
+    display: flex;
+    flex-direction: column-reverse;
+    .swiper-pagination {
+      position: static;
+      .swiper-pagination-bullet {
+        background-color: var(--background);
+        opacity: 1;
+        &.swiper-pagination-bullet-active {
+          background-color: var(--link-regular);
+        }
+      }
+    }
+    .swiper-wrapper {
+      max-width: 100%;
+      .swiper-slide {
+        max-width: 100% !important;
+        width: 100% !important;
+        background-color: var(--background);
+      }
+    }
+  }
+}

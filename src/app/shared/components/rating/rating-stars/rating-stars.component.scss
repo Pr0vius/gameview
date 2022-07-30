@@ -1,0 +1,12 @@
+div {
+  color: inherit;
+  display: flex;
+  font-size: 1em;
+  span.star {
+    color: var(--primary-light);
+    font-size: 1.5em;
+  }
+  .number {
+    margin: auto 0;
+  }
+}

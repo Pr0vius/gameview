@@ -1,0 +1,23 @@
+div {
+  padding-top: 2em;
+  > h4 {
+    margin: 0.5em 0;
+  }
+  > div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 0;
+    > ul {
+      list-style: none;
+      box-sizing: border-box;
+      padding: 0 0.5em;
+      margin: 0;
+      > h5 {
+        margin: 0;
+      }
+      > li {
+        padding-left: 1em;
+      }
+    }
+  }
+}

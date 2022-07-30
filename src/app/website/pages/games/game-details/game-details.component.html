@@ -1,0 +1,117 @@
+<ng-container *ngIf="!isLoading && game; else loading">
+  <div class="page_grid">
+    <div class="left_column">
+      <div class="slider">
+        <app-slider-gallery [id]="game.id"></app-slider-gallery>
+      </div>
+      <div class="info">
+        <h3>{{ game.name }}</h3>
+        <div class="description">
+          <div
+            [innerHTML]="game.description.split('<br />').join('</p><p>')"
+          ></div>
+        </div>
+        <app-game-features
+          [genres]="game.genres"
+          [tags]="game.tags"
+        ></app-game-features>
+        <app-rating-bar
+          [count]="game.ratings_count"
+          [ratings]="game.ratings"
+        ></app-rating-bar>
+        <div class="requeriments">
+          <ng-container *ngFor="let platform of game.platforms">
+            <app-requirements
+              [requirements]="platform.requirements"
+              [name]="platform.platform.name"
+            ></app-requirements>
+          </ng-container>
+        </div>
+        <div *ngIf="seriesGames.length > 0" class="">
+          <h4>Same serie's games</h4>
+          <app-game-grid [games]="seriesGames"></app-game-grid>
+        </div>
+      </div>
+    </div>
+    <div class="right_column">
+      <header>
+        <app-image
+          [src]="game.background_image"
+          [alt]="game.name"
+          [adjust]="true"
+        ></app-image>
+        <h2>{{ game.name }}</h2>
+        <app-rating-stars [rating]="game.rating"></app-rating-stars>
+      </header>
+      <ul class="data">
+        <li>
+          <h6>Platforms</h6>
+          <div class="platforms_icons">
+            <app-platform-icon
+              *ngFor="let platform of game.parent_platforms"
+              [platform]="platform.platform.slug"
+            ></app-platform-icon>
+          </div>
+        </li>
+        <li *ngIf="game.playtime > 0">
+          <h6>Average playtime:</h6>
+          {{ game.playtime }} Hours
+        </li>
+        <li>
+          <h6>Release Date:</h6>
+          {{ game.released }}
+        </li>
+        <li *ngIf="game.esrb_rating !== null">
+          <h6>Age Rating:</h6>
+          {{ game.esrb_rating.name }}
+        </li>
+        <li>
+          <h6>Developer:</h6>
+          <a [routerLink]="['/developers', game.developers[0].slug]">{{
+            game.developers[0].name
+          }}</a>
+        </li>
+        <li>
+          <h6>Publisher:</h6>
+          <a [routerLink]="['/publishers', game.publishers[0].slug]">{{
+            game.publishers[0].name
+          }}</a>
+        </li>
+      </ul>
+      <div class="section">
+        <h5>Where to buy</h5>
+        <div class="container">
+          <app-store-button
+            *ngFor="let store of game.stores"
+            [store]="store.store"
+          ></app-store-button>
+        </div>
+      </div>
+      <div class="section">
+        <h5>Achievements</h5>
+        <app-achievements [achievements]="achievements"></app-achievements>
+      </div>
+      <div class="section">
+        <ng-container *ngIf="parentsGame.length > 0">
+          <h5>Parent Game</h5>
+          <div class="games">
+            <app-small-card
+              *ngFor="let game of parentsGame"
+              [game]="game"
+            ></app-small-card>
+          </div>
+        </ng-container>
+        <ng-container *ngIf="extraContent.length > 0">
+          <h5>Extra content</h5>
+          <div class="games">
+            <app-small-card
+              *ngFor="let game of extraContent"
+              [game]="game"
+            ></app-small-card>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+</ng-container>
+<ng-template #loading> ...cargando</ng-template>

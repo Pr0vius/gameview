@@ -1,0 +1,9 @@
+<h1>Platforms</h1>
+<div class="grid">
+  <app-card
+    *ngFor="let platform of platforms"
+    [item]="platform"
+    [renderIcon]="true"
+    [routerLink]="platform.slug"
+  ></app-card>
+</div>
